@@ -1,7 +1,7 @@
 <div id="player-creator-container">
     <div id="player-creator-input-container">
         <label>Player name:</label>
-        <input id="player-name-input" />
+        <input id="player-name-input" [(ngModel)]="playerName"/>
     </div>
-    <button id="player-create-button">Create new player</button>
+    <button id="player-create-button" (click)="createNewPlayer()">Create new player</button>
 </div>

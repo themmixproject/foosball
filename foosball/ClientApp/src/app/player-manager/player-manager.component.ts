@@ -5,4 +5,10 @@ import { Component } from "@angular/core";
     templateUrl: "./player-manager.component.html",
     styleUrls: ["./player-manager.component.css"],
 })
-export class PlayerManagerComponent {}
+export class PlayerManagerComponent {
+    public playerName: string = "";
+
+    public createNewPlayer() {
+        console.log(this.playerName);
+    }
+}
