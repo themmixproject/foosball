@@ -1,0 +1,35 @@
+#player-creator-container {
+    padding: 20px;
+    background-color: #78b2ff;
+}
+
+#player-creator-input-container {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+input {
+    width: 100%;
+    flex-grow: 1;
+}
+
+label {
+    margin-right: 20px;
+    font-size: 2em;
+    white-space: nowrap;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+}
+
+    button:active {
+        background-color: #d8d8d8;
+    }
