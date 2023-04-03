@@ -10,6 +10,7 @@ import { HomeComponent } from "./home/home.component";
 import { CounterComponent } from "./counter/counter.component";
 import { FetchDataComponent } from "./fetch-data/fetch-data.component";
 import { PlayerManagerComponent } from "./player-manager/player-manager.component";
+import { PlayerCardComponent } from './player-card/player-card.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { PlayerManagerComponent } from "./player-manager/player-manager.componen
         CounterComponent,
         FetchDataComponent,
         PlayerManagerComponent,
+        PlayerCardComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),

@@ -12,7 +12,7 @@ export class PlayerManagerComponent {
             name: "Joey",
             score: 0
         }
-    ]
+    ];
 
     public createNewPlayer() {
         console.log(this.playerName);
