@@ -38,32 +38,6 @@
     margin-top: 50px;
 }
 
-#player-list-container h1 {
-    margin-bottom: 10px;
-}
-
-.player-card {
-    background-color: #eee;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-    .player-card .player-attribute-container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        font-size: 1.7em;
+    #player-list-container h1 {
+        margin-bottom: 10px;
     }
-
-    .player-card button {
-        font-size: 1.5em;
-        background-color: #ff4646;
-        border: 0;
-        outline: 0;
-        padding: 10px 20px;
-    }
-
-        .player-card button:active {
-            background-color: #ce3939;
-        }
