@@ -15,6 +15,6 @@ export class PlayerManagerComponent {
     ];
 
     public createNewPlayer() {
-        console.log(this.playerName);
+        console.log("Create player: " + this.playerName);
     }
 }
