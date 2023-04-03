@@ -34,8 +34,12 @@
         background-color: #d8d8d8;
     }
 
-#player-list {
+#player-list-container {
     margin-top: 50px;
+}
+
+#player-list-container h1 {
+    margin-bottom: 10px;
 }
 
 .player-card {

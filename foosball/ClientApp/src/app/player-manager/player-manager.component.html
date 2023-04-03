@@ -9,11 +9,14 @@
     </button>
 </div>
 
-<div id="player-list" *ngFor="let player of players">
-    <div class="player-card">
-        <div class="player-attribute-container">
-            {{player.name}}
+<div id="player-list-container">
+    <h1>Players</h1>
+    <div id="player-list" *ngFor="let player of players">
+        <div class="player-card">
+            <div class="player-attribute-container">
+                {{player.name}}
+            </div>
+            <button>Delete</button>
         </div>
-        <button>Delete</button>
     </div>
 </div>
