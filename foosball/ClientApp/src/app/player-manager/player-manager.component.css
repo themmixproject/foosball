@@ -9,18 +9,18 @@
     color: white;
 }
 
-input {
-    width: 100%;
-    flex-grow: 1;
-}
+    #player-creator-input-container input {
+        width: 100%;
+        flex-grow: 1;
+    }
 
-label {
-    margin-right: 20px;
-    font-size: 2em;
-    white-space: nowrap;
-}
+    #player-creator-input-container label {
+        margin-right: 20px;
+        font-size: 2em;
+        white-space: nowrap;
+    }
 
-button {
+#player-creator-container button {
     border: 0;
     outline: 0;
     width: 100%;
@@ -30,6 +30,25 @@ button {
     background-color: #f0f0f0;
 }
 
-    button:active {
-        background-color: #d8d8d8;
+button:active {
+    background-color: #d8d8d8;
+}
+
+#player-list {
+    margin-top: 50px;
+}
+
+.player-card {
+    background-color: #eee;
+    font-size: 1.5em;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .player-card button {
+        background-color: red;
+        border: 0;
+        outline: 0;
+        padding: 10px 20px;
     }

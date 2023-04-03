@@ -7,6 +7,12 @@ import { Component } from "@angular/core";
 })
 export class PlayerManagerComponent {
     public playerName: string = "";
+    public players: Array<any> = [
+        {
+            name: "Joey",
+            score: 0
+        }
+    ]
 
     public createNewPlayer() {
         console.log(this.playerName);

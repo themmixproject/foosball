@@ -1,7 +1,17 @@
 <div id="player-creator-container">
     <div id="player-creator-input-container">
         <label>Player name:</label>
-        <input id="player-name-input" [(ngModel)]="playerName"/>
+        <input id="player-name-input" [(ngModel)]="playerName" />
     </div>
-    <button id="player-create-button" (click)="createNewPlayer()">Create new player</button>
+    <button id="player-create-button"
+            (click)="createNewPlayer()">
+        Create new player
+    </button>
+</div>
+
+<div id="player-list" *ngFor="let player of players">
+    <div class="player-card">
+        {{player.name}}
+        <button>Delete</button>
+    </div>
 </div>
