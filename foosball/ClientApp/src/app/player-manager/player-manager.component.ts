@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { AlertService } from "../alert.service";
 
 @Component({
     selector: "app-player-manager",
@@ -6,15 +7,21 @@ import { Component } from "@angular/core";
     styleUrls: ["./player-manager.component.css"],
 })
 export class PlayerManagerComponent {
-    public playerName: string = "";
+    constructor(private alertService: AlertService) {}
+
+    playerName: string = "";
     public players: Array<any> = [
         {
             name: "Joey",
-            score: 0
-        }
+            score: 0,
+        },
     ];
 
     public createNewPlayer() {
-        console.log("Create player: " + this.playerName);
+        if (this.playerName === "") {
+            this.alertService.toggleAlert("Player name cannot be empty.");
+        } else {
+            console.log("Create player: " + this.playerName);
+        }
     }
 }
