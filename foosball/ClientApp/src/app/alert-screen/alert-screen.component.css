@@ -1,0 +1,30 @@
+#alert-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.555);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#alert-window {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    max-width: 300px;
+}
+
+#alert-close-button {
+    background-color: #78b2ff;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 1.2em;
+}
+#alert-close-button:active {
+    background-color: #689bdd;
+}

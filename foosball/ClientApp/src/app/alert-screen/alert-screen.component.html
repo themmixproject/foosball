@@ -1,0 +1,7 @@
+<div id="alert-overlay" *ngIf="alertDisplay">
+    <div id="alert-window">
+        <h2>Alert!</h2>
+        <p>{{ alertText }}</p>
+        <button id="alert-close-button" (click)="closeAlert()">Close</button>
+    </div>
+</div>
