@@ -11,7 +11,9 @@
 
 <div id="player-list" *ngFor="let player of players">
     <div class="player-card">
-        {{player.name}}
+        <div class="player-attribute-container">
+            {{player.name}}
+        </div>
         <button>Delete</button>
     </div>
 </div>
