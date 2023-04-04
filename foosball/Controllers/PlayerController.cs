@@ -1,13 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using foosball.Models;
+using System.Data.Entity;
+using foosball.Database;
+using foosball.Database.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace foosball.Controllers {
     [ApiController]
-    [Route("[controller]")]
+    [Route( "[controller]" )]
     public class PlayerController : ControllerBase {
+
+        public readonly FoosballContext foosballContext = new FoosballContext();
+
         //// GET: api/<PlayerController>
         [HttpGet]
         public IEnumerable<string> Get() {
@@ -22,10 +28,14 @@ namespace foosball.Controllers {
 
         // POST api/<PlayerController>
         [HttpPost]
-        public IActionResult Post(PlayerPostItem player) {
-            if(player.Name == ""){ return BadRequest(); }
-            
-            Debug.WriteLine(player.Name);
+        public IActionResult Post( PlayerPostItem player ) {
+            if (player.Name == "") { return BadRequest(); }
+
+            foosballContext.Players.Add( new Player( player.Name ) );
+            foosballContext.SaveChanges();
+
+
+            Debug.WriteLine( player.Name );
             return Ok();
         }
 
