@@ -16,8 +16,8 @@ namespace foosball.Controllers {
 
         //// GET: api/<PlayerController>
         [HttpGet]
-        public IEnumerable<string> Get() {
-            return new string[] { "value1", "value2" };
+        public IEnumerable<Player> Get() {
+            return foosballContext.Players.ToList();
         }
 
         //// GET api/<PlayerController>/5
