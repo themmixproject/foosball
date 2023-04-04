@@ -13,5 +13,8 @@ namespace foosball.Database.Models
         {
             Name = name;
         }
+        public Player() {
+            Name = string.Empty;
+        }
     }
 }
