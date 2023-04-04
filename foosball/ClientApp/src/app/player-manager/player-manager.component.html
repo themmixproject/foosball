@@ -11,7 +11,7 @@
 
 <div id="player-list-container">
     <h1>Players</h1>
-    <div id="player-list" *ngFor="let player of players">
+    <div id="player-list" *ngFor="let player of playerService.players">
         <app-player-card [player]="player"></app-player-card>
     </div>
 </div>

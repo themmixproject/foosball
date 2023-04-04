@@ -13,8 +13,8 @@ import { Inject } from "@angular/core";
 export class PlayerManagerComponent implements OnInit {
     constructor(
         private alertService: AlertService,
-        private playerService: PlayerService,
         private http: HttpClient,
+        public playerService: PlayerService,
         @Inject("BASE_URL") baseUrl: string
     ) {
         this.baseUrl = baseUrl;
@@ -25,7 +25,6 @@ export class PlayerManagerComponent implements OnInit {
     public players: Array<Player> = [];
     ngOnInit(): void {
         this.players = this.playerService.players;
-        this.playerName = "Timothy";
     }
 
     private _options = {
@@ -36,15 +35,8 @@ export class PlayerManagerComponent implements OnInit {
             this.alertService.toggleAlert("Player name cannot be empty.");
         } else {
             console.log("Create player: " + this.playerName);
-            this.playerService.players.push(new Player(this.playerName));
-            this.http
-                .post(
-                    this.baseUrl + "player",
-                    JSON.stringify({ "name": this.playerName }),
-                    this._options
-                ).subscribe(function(result) {
-                    console.log(result);
-                });
+            this.playerService.createPlayer(this.playerName);
+            this.playerService.updatePlayers();
         }
     }
 }
