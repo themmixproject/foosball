@@ -34,8 +34,6 @@ namespace foosball.Controllers {
             foosballContext.Players.Add( new Player( player.Name ) );
             foosballContext.SaveChanges();
 
-
-            Debug.WriteLine( player.Name );
             return Ok();
         }
 
@@ -45,8 +43,17 @@ namespace foosball.Controllers {
         //}
 
         //// DELETE api/<PlayerController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id) {
-        //}
+        [HttpDelete( "{id}" )]
+        public IActionResult Delete( int id ) {
+            Player? playerToDelete = foosballContext.Players.SingleOrDefault( player => player.PlayerId == id );
+            if (playerToDelete == null) {
+                return NotFound();
+            }
+            else {
+                foosballContext.Players.Remove( playerToDelete );
+                foosballContext.SaveChanges();
+                return Ok();
+            }
+        }
     }
 }

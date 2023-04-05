@@ -36,7 +36,7 @@ export class PlayerManagerComponent implements OnInit {
         } else {
             console.log("Create player: " + this.playerName);
             this.playerService.createPlayer(this.playerName);
-            this.playerService.updatePlayers();
+            this.playerService.getPlayers();
         }
     }
 }
