@@ -24,8 +24,10 @@ export class PlayerService {
     public players: Array<Player> = [];
 
     public async updatePlayers() {
+        console.log(this.baseUrl + "api/player");
+
         const players$ = this.http.get<Player[]>(
-            this.baseUrl + "player",
+            this.baseUrl + "api/player",
             this._options
         );
 
@@ -34,7 +36,7 @@ export class PlayerService {
 
     public async createPlayer(playerName: string) {
         const playerResult$ = this.http.post(
-            this.baseUrl + "player",
+            this.baseUrl + "api/player",
             JSON.stringify({ name: playerName }),
             this._options
         );

@@ -38,4 +38,4 @@ import { AlertScreenComponent } from "./alert-screen/alert-screen.component";
     providers: [],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

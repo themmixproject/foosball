@@ -9,7 +9,7 @@ using foosball.Database.Models;
 
 namespace foosball.Controllers {
     [ApiController]
-    [Route( "[controller]" )]
+    [Route( "api/[controller]" )]
     public class PlayerController : ControllerBase {
 
         public readonly FoosballContext foosballContext = new FoosballContext();
