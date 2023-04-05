@@ -3,6 +3,7 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    margin: 20px;
 }
 
     .player-card .player-attribute-container {
