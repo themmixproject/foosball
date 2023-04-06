@@ -12,6 +12,9 @@ import { FetchDataComponent } from "./fetch-data/fetch-data.component";
 import { PlayerManagerComponent } from "./player-manager/player-manager.component";
 import { PlayerCardComponent } from "./player-card/player-card.component";
 import { AlertScreenComponent } from "./alert-screen/alert-screen.component";
+import { GameManagerComponent } from './game-manager/game-manager.component';
+import { GameCreatorComponent } from './game-creator/game-creator.component';
+import { PlayerSelectorComponent } from './player-selector/player-selector.component';
 
 @NgModule({
     declarations: [
@@ -23,14 +26,18 @@ import { AlertScreenComponent } from "./alert-screen/alert-screen.component";
         PlayerManagerComponent,
         PlayerCardComponent,
         AlertScreenComponent,
+        GameManagerComponent,
+        GameCreatorComponent,
+        PlayerSelectorComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
         HttpClientModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: "", component: HomeComponent, pathMatch: "full" },
+            //{ path: "", component: HomeComponent, pathMatch: "full" },
             { path: "player-manager", component: PlayerManagerComponent },
+            { path: "", component: GameManagerComponent },
             { path: "counter", component: CounterComponent },
             { path: "fetch-data", component: FetchDataComponent },
         ]),
