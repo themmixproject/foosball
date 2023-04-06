@@ -31,7 +31,21 @@
     box-shadow: 0 0 1rem 0.25rem rgba(0, 0, 0, 0.1);
 }
 
-#game-creator-form #team-input-container {
+#game-creator-form-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#game-creator-form-header button{
+    border: 0;
+    outline: 0;
+    background-color: white;
+    font-size: 2em;
+    padding: 0;
+}
+
+#team-input-container {
     display: flex;
     flex-direction: row;
 }
@@ -42,19 +56,6 @@
     margin: 10px;
 }
 
-.team-input .add-player-button {
-    border: 0;
-    outline: 0;
-    width: 100%;
-    padding: 10px;
-    font-size: 1.2em;
-    margin-top: 10px;
-    background-color: #f0f0f0;
-}
-
-.team-input .add-player-button:active {
-    background-color: #d8d8d8;
-}
 
 #player-selector-overlay {
     position: absolute;

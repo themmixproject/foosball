@@ -1,18 +1,14 @@
 <div id="game-creator-container">
-    <button id="game-create-button">Create new game</button>
-    <div id="game-creator-form-container">
+    <button id="game-create-button" (click)="toggleGameCreatorForm()">Create new game</button>
+    <div *ngIf="gameCreatorFormDisplay" id="game-creator-form-container">
         <div id="game-creator-form">
-            <h1>Create new game</h1>
+            <div id="game-creator-form-header">
+                <h1>Create new game</h1>
+                <button>✕</button>
+            </div>
             <div id="team-input-container">
-                <div class="team-input">
-                    <label>Team 1 name</label>
-                    <input type="text" />
-                    <button class="add-player-button">Add players</button>
-                </div>
-                <div class="team-input">
-                    <label>Team 2 name</label>
-                    <input type="text" />
-                    <button class="add-player-button">Add players</button>
+                <div *ngFor="let team of teams">
+                    <app-team-input></app-team-input>
                 </div>
             </div>
         </div>
