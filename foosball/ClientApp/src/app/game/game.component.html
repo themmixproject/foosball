@@ -1,1 +1,15 @@
-<p>game works!</p>
+<div id="team-list-container">
+    <div class="team-list" *ngFor="let team of game.teams">
+        <div id="team-list-header">
+            <h1>{{ team.name }}</h1>
+            <h2>{{ team.score }}</h2>
+        </div>
+        <div class="team-list-item" *ngFor="let player of team.players">
+            {{ player.name }}
+            <div class="player-list-item-button-container">
+                <button>+</button>
+                <button>-</button>
+            </div>
+        </div>
+    </div>
+</div>
