@@ -17,6 +17,7 @@ import { GameCreatorComponent } from './game-creator/game-creator.component';
 import { PlayerSelectorComponent } from './player-selector/player-selector.component';
 import { TeamInputComponent } from './team-input/team-input.component';
 import { GameListComponent } from './game-list/game-list.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { GameListComponent } from './game-list/game-list.component';
         PlayerSelectorComponent,
         TeamInputComponent,
         GameListComponent,
+        GameComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -41,9 +43,10 @@ import { GameListComponent } from './game-list/game-list.component';
         RouterModule.forRoot([
             //{ path: "", component: HomeComponent, pathMatch: "full" },
             { path: "player-manager", component: PlayerManagerComponent },
-            { path: "", component: GameManagerComponent },
+            // { path: "", component: GameManagerComponent },
             { path: "counter", component: CounterComponent },
             { path: "fetch-data", component: FetchDataComponent },
+            {path: "", component: GameComponent}
         ]),
     ],
     providers: [],
