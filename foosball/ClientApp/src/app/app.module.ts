@@ -16,6 +16,7 @@ import { GameManagerComponent } from './game-manager/game-manager.component';
 import { GameCreatorComponent } from './game-creator/game-creator.component';
 import { PlayerSelectorComponent } from './player-selector/player-selector.component';
 import { TeamInputComponent } from './team-input/team-input.component';
+import { GameListComponent } from './game-list/game-list.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { TeamInputComponent } from './team-input/team-input.component';
         GameCreatorComponent,
         PlayerSelectorComponent,
         TeamInputComponent,
+        GameListComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
