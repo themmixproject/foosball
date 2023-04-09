@@ -22,6 +22,9 @@
     padding: 10px;
     margin: 10px 0;
     font-size: 1.5em;
+}
+
+.team-list-item-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
