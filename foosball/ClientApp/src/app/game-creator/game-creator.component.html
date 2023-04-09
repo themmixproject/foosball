@@ -4,14 +4,15 @@
         <div id="game-creator-form">
             <div id="game-creator-form-header">
                 <h1>Create new game</h1>
-                <button>✕</button>
+                <button (click)="toggleGameCreatorForm()">✕</button>
             </div>
+            <button id="create-game-button">Create game</button>
             <div id="team-input-container">
                 <div *ngFor="let team of teams">
-                    <app-team-input></app-team-input>
+                    <app-team-input [team]="team"></app-team-input>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<app-player-selector></app-player-selector>
+<!-- <app-player-selector></app-player-selector> -->
