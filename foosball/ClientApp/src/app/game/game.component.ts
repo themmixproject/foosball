@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { GameService } from "../game.service";
 import { Game } from "src/game";
+import { GameService } from "../game.service";
 
 @Component({
     selector: "app-game",
@@ -8,6 +8,14 @@ import { Game } from "src/game";
     styleUrls: ["./game.component.css"],
 })
 export class GameComponent {
-    constructor(public gameService: GameService){}
+    constructor(public gameService: GameService) {}
+    
     game: Game = this.gameService.games[0];
+
+    public increaseScore(teamIndex: number, playerIndex: number) {
+        this.gameService.game(0).increaseScore(teamIndex, playerIndex);
+    }
+    public decreaseScore(teamIndex: number, playerIndex: number) {
+        this.gameService.game(0).decreaseScore(teamIndex, playerIndex);
+    }
 }
