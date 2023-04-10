@@ -14,8 +14,6 @@ import { PlayerCardComponent } from "./player-card/player-card.component";
 import { AlertScreenComponent } from "./alert-screen/alert-screen.component";
 import { GameManagerComponent } from './game-manager/game-manager.component';
 import { GameCreatorComponent } from './game-creator/game-creator.component';
-import { PlayerSelectorComponent } from './player-selector/player-selector.component';
-import { TeamInputComponent } from './team-input/team-input.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameComponent } from './game/game.component';
 
@@ -31,8 +29,6 @@ import { GameComponent } from './game/game.component';
         AlertScreenComponent,
         GameManagerComponent,
         GameCreatorComponent,
-        PlayerSelectorComponent,
-        TeamInputComponent,
         GameListComponent,
         GameComponent,
     ],
