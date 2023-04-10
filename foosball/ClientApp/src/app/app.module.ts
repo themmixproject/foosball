@@ -37,9 +37,9 @@ import { GameComponent } from './game/game.component';
         HttpClientModule,
         FormsModule,
         RouterModule.forRoot([
-            //{ path: "", component: HomeComponent, pathMatch: "full" },
+            // { path: "", component: HomeComponent, pathMatch: "full" },
             { path: "player-manager", component: PlayerManagerComponent },
-            // { path: "", component: GameManagerComponent },
+            { path: "", component: GameManagerComponent },
             { path: "counter", component: CounterComponent },
             { path: "fetch-data", component: FetchDataComponent },
             {path: "", component: GameComponent}
