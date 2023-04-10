@@ -1,5 +1,5 @@
 <div id="game-list">
-    <div class="game-list-item" *ngFor="let game of gameService.games">
+    <div class="game-list-item" *ngFor="let game of games">
         <h1 class="game-match-name">{{game.teams[0].name}} VS {{game.teams[0].name}}</h1>
         <div class="game-match-score">{{game.teams[0].score}} - {{game.teams[1].score}}</div>
     </div>

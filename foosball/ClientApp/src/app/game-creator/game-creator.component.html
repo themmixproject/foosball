@@ -6,7 +6,7 @@
                 <h1>Create new game</h1>
                 <button (click)="toggleGameCreatorForm()">✕</button>
             </div>
-            <button id="create-game-button">Create game</button>
+            <button id="create-game-button" (click)="createGame()">Create game</button>
             <div id="team-input-container">
                 <div *ngFor="let team of teams; index as teamIndex">
                     <div class="team-input">

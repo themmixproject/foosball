@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 import { Game } from "src/game";
 import { Player } from "src/player";
 import { Team } from "src/team";
@@ -8,6 +9,8 @@ import { TeamMember } from "src/team-member";
     providedIn: "root",
 })
 export class GameService {
+    execChange: Subject<any> = new Subject<any>();
+
     constructor() {
         this.games = [
             new Game([
@@ -44,5 +47,10 @@ export class GameService {
                 }
             },
         };
+    }
+
+    public createGame(teams : Team[]){
+        this.games.push(new Game(teams));
+        this.execChange.next(this.games);
     }
 }
