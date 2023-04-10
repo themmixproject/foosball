@@ -11,7 +11,7 @@
                 <div *ngFor="let team of teams; index as teamIndex">
                     <div class="team-input">
                         <label>Team {{teamIndex + 1}} name</label>
-                        <input type="text" />
+                        <input [ngModel]="teams[teamIndex].name" type="text" />
                         <button class="add-player-button">Add players</button>
                     </div>
                 </div>
