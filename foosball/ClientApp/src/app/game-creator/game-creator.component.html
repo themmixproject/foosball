@@ -8,8 +8,12 @@
             </div>
             <button id="create-game-button">Create game</button>
             <div id="team-input-container">
-                <div *ngFor="let team of teams">
-                    <app-team-input [team]="team"></app-team-input>
+                <div *ngFor="let team of teams; index as teamIndex">
+                    <div class="team-input">
+                        <label>Team {{teamIndex + 1}} name</label>
+                        <input type="text" />
+                        <button class="add-player-button">Add players</button>
+                    </div>
                 </div>
             </div>
         </div>
