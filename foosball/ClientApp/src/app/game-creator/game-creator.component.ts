@@ -3,6 +3,7 @@ import { Team } from "src/team";
 import { GameService } from "../game.service";
 import { Player } from "src/player";
 import { PlayerService } from "../player.service";
+import { TeamMember } from "src/team-member";
 
 @Component({
     selector: "app-game-creator",
@@ -53,7 +54,7 @@ export class GameCreatorComponent {
 
     public addPlayerToTeam(playerIndex: number) {
         this.availablePlayers[playerIndex] = false;
-        console.log(this.availablePlayers[playerIndex]);
+        this.playerSelectorTeam.members.push(new TeamMember(this.players[playerIndex]))
     }
 
     public playerSelectorTeam: Team;

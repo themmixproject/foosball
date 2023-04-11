@@ -84,6 +84,21 @@
     background-color: #d8d8d8;
 }
 
+.team-member-list-item {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(219, 219, 219);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.team-member-list-item .team-member-remove-button {
+    border: 0;
+    outline: 0;
+    background-color: white;
+    padding: 5;
+}
 
 #player-selector-overlay {
     position: absolute;

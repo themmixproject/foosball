@@ -14,6 +14,15 @@
                         <input [ngModel]="teams[teamIndex].name" type="text" />
                         <button class="add-player-button" (click)="[togglePlayerSelectorForm(), setPlayerSelectorTeam(teamIndex)]">Add players</button>
                     </div>
+                    <h3>Players</h3>
+                    <div class="team-member-list">
+                        <div class="team-member-list-item" *ngFor="let teamMember of team.members">
+                            <div>
+                                {{teamMember.player.name}}
+                            </div>
+                            <button class="team-member-remove-button">✕</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
