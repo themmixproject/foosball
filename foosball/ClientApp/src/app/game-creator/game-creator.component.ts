@@ -54,11 +54,33 @@ export class GameCreatorComponent {
 
     public addPlayerToTeam(playerIndex: number) {
         this.availablePlayers[playerIndex] = false;
-        this.playerSelectorTeam.members.push(new TeamMember(this.players[playerIndex]))
+        this.playerSelectorTeam.members.push(
+            new TeamMember(this.players[playerIndex])
+        );
     }
 
     public playerSelectorTeam: Team;
     public setPlayerSelectorTeam(teamIndex: number) {
         this.playerSelectorTeam = this.teams[teamIndex];
+    }
+
+    public removePlayerFromTeam(playerId: number, teamIndex: number) {
+        let playerIndex = this.playerService.getPlayerIndexById(playerId);
+        let memberIndex = this.getPlayerIndexFromTeam(playerId, teamIndex);
+        if (playerIndex > -1) {
+            this.availablePlayers[playerIndex] = true;
+            this.teams[teamIndex].members.splice(memberIndex, 1);
+        }
+    }
+
+    public getPlayerIndexFromTeam(playerId: number, teamIndex: number) {
+        for (let i = 0; i < this.teams[teamIndex].members.length; i++) {
+            let teamMember = this.teams[teamIndex].members[i];
+            if (teamMember.player.playerId == playerId) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

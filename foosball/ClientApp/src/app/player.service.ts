@@ -51,4 +51,14 @@ export class PlayerService {
             this.getPlayers();
         });
     }
+
+    public getPlayerIndexById(playerId: number){
+        for(let i = 0; i < this.players.length; i++){
+            if(this.players[i].playerId == playerId){
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

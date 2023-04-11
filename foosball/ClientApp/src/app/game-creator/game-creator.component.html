@@ -14,13 +14,13 @@
                         <input [ngModel]="teams[teamIndex].name" type="text" />
                         <button class="add-player-button" (click)="[togglePlayerSelectorForm(), setPlayerSelectorTeam(teamIndex)]">Add players</button>
                     </div>
-                    <h3>Players</h3>
+                    <h3 [hidden]="!(teams[teamIndex].members.length>0)">Players</h3>
                     <div class="team-member-list">
                         <div class="team-member-list-item" *ngFor="let teamMember of team.members">
                             <div>
                                 {{teamMember.player.name}}
                             </div>
-                            <button class="team-member-remove-button">✕</button>
+                            <button class="team-member-remove-button" (click)="removePlayerFromTeam(teamMember.player.playerId, teamIndex)">✕</button>
                         </div>
                     </div>
                 </div>
@@ -29,11 +29,11 @@
         <div *ngIf="playerSelectorFormDisplay" id="player-selector-container">
             <div id="player-selector">
                 <div id="player-selector-header">
-                    <h1>Select players</h1>
+                    <h1 [hidden]="">Select players</h1>
                     <button id="player-selector-close-button" (click)="togglePlayerSelectorForm()">✕</button>
                 </div>
                 <div id="player-selector-list">
-                    <div class="player-selector-item" *ngFor="let player of players; index as playerIndex" [hidden]="!this.availablePlayers[playerIndex]">
+                    <div class="player-selector-item" *ngFor="let player of players; index as playerIndex" [hidden]="!availablePlayers[playerIndex]">
                         {{player.name}}
                         <button (click)="addPlayerToTeam(playerIndex)">Add player</button>
                     </div>
