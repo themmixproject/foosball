@@ -11,22 +11,9 @@ import { TeamMember } from "src/team-member";
 export class GameService {
     execChange: Subject<any> = new Subject<any>();
 
-    constructor() {
-        this.games = [
-            new Game([
-                new Team("Red", [
-                    new TeamMember(new Player("Gregg")),
-                    new TeamMember(new Player("Toby")),
-                ]),
-                new Team("Blue", [
-                    new TeamMember(new Player("Natasha")),
-                    new TeamMember(new Player("Sophie")),
-                ]),
-            ]),
-        ];
-    }
+    constructor() {}
 
-    public games: Game[];
+    public games: Game[] = [];
 
     public game(index: number) {
         let game: Game = this.games[index];

@@ -50,6 +50,7 @@ export class GameCreatorComponent {
 
     public createGame() {
         this.gameService.createGame(this.teams);
+        this.toggleGameCreatorForm();
     }
 
     public addPlayerToTeam(playerIndex: number) {
