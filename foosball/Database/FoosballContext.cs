@@ -7,6 +7,9 @@ namespace foosball.Database {
         public FoosballContext() : base( "FoosballContext" ) { }
 
         public DbSet<Player> Players => Set<Player>();
+        public DbSet<TeamMember> TeamMembers => Set<TeamMember>();
+        public DbSet<Team> Teams => Set<Team>();
+        public DbSet<Game> Games => Set<Game>();
 
         protected override void OnModelCreating( DbModelBuilder modelBuilder ) {
             modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
