@@ -2,12 +2,14 @@ import { Injectable } from "@angular/core";
 import { Player } from "src/player";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Inject } from "@angular/core";
-import { firstValueFrom } from "rxjs";
+import { Subject, firstValueFrom } from "rxjs";
 
 @Injectable({
     providedIn: "root",
 })
 export class PlayerService {
+    playersChange: Subject<any> = new Subject<any>();
+
     constructor(private http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
         this.baseUrl = baseUrl;
         this.getPlayers();
@@ -26,6 +28,7 @@ export class PlayerService {
             this._options
         ).subscribe((result) => {
             this.players = result;
+            this.playersChange.next(this.players);
             console.log(result);
         })
     }

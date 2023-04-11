@@ -118,15 +118,11 @@
 }
 
 #player-selector-header #player-selector-close-button {
-    outline: 0;
     border: 0;
-    padding: 0 20px;
-    background-color: #ff4646;
-    color: white;
-}
-
-#player-selector-header #player-selector-close-button:active {
-    background-color: #ce3939;
+    outline: 0;
+    background-color: white;
+    font-size: 2em;
+    padding: 0;
 }
 
 #player-selector-list .player-selector-item {
@@ -142,6 +138,11 @@
     outline: 0;
     border: 0;
     padding: 10px 20px;
-    background-color: #46bbff;
+    background-color: #78b2ff;
     color: white;
+}
+
+#player-selector-list .player-selector-item button:active {
+    background-color: #689bdd;
+
 }
