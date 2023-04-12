@@ -7,5 +7,7 @@
         public TeamMember(Player player) {
             Player = player;
         }
+
+        public TeamMember() { }
     }
 }
