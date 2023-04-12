@@ -1,9 +1,8 @@
-import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Injectable, Inject } from "@angular/core";
 import { Subject } from "rxjs";
 import { Game } from "src/game";
-import { Player } from "src/player";
 import { Team } from "src/team";
-import { TeamMember } from "src/team-member";
 
 @Injectable({
     providedIn: "root",
@@ -11,9 +10,15 @@ import { TeamMember } from "src/team-member";
 export class GameService {
     execChange: Subject<any> = new Subject<any>();
 
-    constructor() {}
+    constructor(private http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
+        this.baseUrl = baseUrl;
+    }
 
     public games: Game[] = [];
+    private _options = {
+        headers: new HttpHeaders({ "Content-Type": "application/json" }),
+    };
+    public baseUrl: string;
 
     public game(index: number) {
         let game: Game = this.games[index];
@@ -36,8 +41,11 @@ export class GameService {
         };
     }
 
-    public createGame(teams : Team[]){
+    public createGame(teams: Team[]) {
         this.games.push(new Game(teams));
+        this.http
+            .post(this.baseUrl + "api/game", JSON.stringify(teams), this._options)
+            .subscribe(() => {});
         this.execChange.next(this.games);
     }
 }
