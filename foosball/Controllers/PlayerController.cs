@@ -45,7 +45,7 @@ namespace foosball.Controllers {
         //// DELETE api/<PlayerController>/5
         [HttpDelete( "{id}" )]
         public IActionResult Delete( int id ) {
-            Player? playerToDelete = foosballContext.Players.SingleOrDefault( player => player.PlayerId == id );
+            Player playerToDelete = foosballContext.Players.SingleOrDefault( player => player.PlayerId == id );
             if (playerToDelete == null) {
                 return NotFound();
             }
