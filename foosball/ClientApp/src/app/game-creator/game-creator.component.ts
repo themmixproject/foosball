@@ -38,12 +38,12 @@ export class GameCreatorComponent {
     availablePlayers: Array<Boolean> = [];
     _subscription_players: any;
 
-    gameCreatorFormDisplay: Boolean = true;
+    gameCreatorFormDisplay: Boolean = false;
     public toggleGameCreatorForm() {
         this.gameCreatorFormDisplay = !this.gameCreatorFormDisplay;
     }
 
-    playerSelectorFormDisplay: Boolean = true;
+    playerSelectorFormDisplay: Boolean = false;
     public togglePlayerSelectorForm() {
         this.playerSelectorFormDisplay = !this.playerSelectorFormDisplay;
     }
