@@ -12,6 +12,7 @@ export class GameService {
 
     constructor(private http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
         this.baseUrl = baseUrl;
+        this.getGames();
     }
 
     public games: Game[] = [];
@@ -41,10 +42,24 @@ export class GameService {
         };
     }
 
+    public getGames() {
+        this.http
+            .get<Game[]>(this.baseUrl + "api/game", this._options)
+            .subscribe((result) => {
+                this.games = result;
+                this.execChange.next(this.games);
+                console.log(result);
+            });
+    }
+
     public createGame(teams: Team[]) {
         this.games.push(new Game(teams));
         this.http
-            .post(this.baseUrl + "api/game", JSON.stringify(teams), this._options)
+            .post(
+                this.baseUrl + "api/game",
+                JSON.stringify(teams),
+                this._options
+            )
             .subscribe(() => {});
         this.execChange.next(this.games);
     }
