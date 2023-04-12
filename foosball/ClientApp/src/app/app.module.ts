@@ -42,7 +42,7 @@ import { GameComponent } from './game/game.component';
             { path: "", component: GameManagerComponent },
             { path: "counter", component: CounterComponent },
             { path: "fetch-data", component: FetchDataComponent },
-            {path: "", component: GameComponent}
+            {path: "game/:id", component: GameComponent}
         ]),
     ],
     providers: [],
