@@ -10,8 +10,12 @@ namespace foosball.Controllers {
     public class ScoreController : ControllerBase {
         public readonly FoosballContext foosballContext = new FoosballContext();
 
+        [HttpGet("increase")] public IActionResult Score() {
+            return Ok("value");
+        }
+
         // PUT api/<ScoreController>/5
-        [HttpPut( "increase/{teamId}/memberId" )]
+        [HttpPut( "increase/{teamId}/{memberId}" )]
         public IActionResult IncreaseScore( int teamId, int memberId ) {
             Team team = foosballContext.Teams.SingleOrDefault( team => team.TeamId == teamId );
             TeamMember teamMember = foosballContext.TeamMembers.SingleOrDefault( teamMember => teamMember.TeamMemberId == memberId );
@@ -22,6 +26,22 @@ namespace foosball.Controllers {
                 team.Score = teamMember.Score + 1;
                 teamMember.Score = teamMember.Score + 1;
                 teamMember.Player.Score = teamMember.Player.Score + 1;
+                foosballContext.SaveChanges();
+                return Ok();
+            }
+        }
+
+        [HttpPut("decrease/{teamId}/{memberId}")]
+        public IActionResult DecreaseScore(int teamId, int memberId ) {
+            Team team = foosballContext.Teams.SingleOrDefault( team => team.TeamId == teamId );
+            TeamMember teamMember = foosballContext.TeamMembers.SingleOrDefault( teamMember => teamMember.TeamMemberId == memberId );
+            if (teamMember == null || team == null) {
+                return NotFound();
+            }
+            else {
+                team.Score = teamMember.Score - 1;
+                teamMember.Score = teamMember.Score - 1;
+                teamMember.Player.Score = teamMember.Player.Score - 1;
                 foosballContext.SaveChanges();
                 return Ok();
             }
