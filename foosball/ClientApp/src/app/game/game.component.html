@@ -1,5 +1,5 @@
 <div id="team-list-container">
-    <div class="team-list" *ngFor="let team of game.teams; index as teamIndex">
+    <div class="team-list" *ngFor="let team of game?.teams; index as teamIndex">
         <div id="team-list-header">
             <h1>{{ team.name }}</h1>
             <h2>{{ team.score }}</h2>
@@ -8,8 +8,8 @@
             <div class="team-list-item-header">
                 {{ member.player.name }}
                 <div class="player-list-item-button-container">
-                    <button (click)="increaseScore(teamIndex, playerIndex)">+</button>
-                    <button (click)="decreaseScore(teamIndex, playerIndex)">-</button>
+                    <button (click)="increaseScore(team.teamId, member.teamMemberId)">+</button>
+                    <button (click)="decreaseScore(team.teamId, member.teamMemberId)">-</button>
                 </div>
             </div>
             <div class="player-score-container">Player score: {{member.score}}</div>

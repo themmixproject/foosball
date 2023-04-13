@@ -33,10 +33,10 @@ export class GameComponent {
     game: Game;
     _subscription_games :any;
 
-    public increaseScore(teamIndex: number, playerIndex: number) {
-        this.gameService.game(0).increaseScore(teamIndex, playerIndex);
+    public increaseScore(teamId: number, memberId: number) {
+        this.gameService.increaseScore(teamId, memberId);
     }
-    public decreaseScore(teamIndex: number, playerIndex: number) {
-        this.gameService.game(0).decreaseScore(teamIndex, playerIndex);
+    public decreaseScore(teamId: number, memberId: number) {
+        this.gameService.decreaseScore(teamId, memberId);
     }
 }
