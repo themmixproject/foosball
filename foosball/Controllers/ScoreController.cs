@@ -12,7 +12,7 @@ namespace foosball.Controllers {
 
         // PUT api/<ScoreController>/5
         [HttpPut( "increase/{teamId}/memberId" )]
-        public IActionResult Put( int teamId, int memberId ) {
+        public IActionResult IncreaseScore( int teamId, int memberId ) {
             Team team = foosballContext.Teams.SingleOrDefault( team => team.TeamId == teamId );
             TeamMember teamMember = foosballContext.TeamMembers.SingleOrDefault( teamMember => teamMember.TeamMemberId == memberId );
             if (teamMember == null || team == null) {
