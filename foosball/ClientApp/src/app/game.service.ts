@@ -63,4 +63,14 @@ export class GameService {
             .subscribe(() => {});
         this.execChange.next(this.games);
     }
+
+    public getGameById(id: number){
+        for(let i =0; i<this.games.length; i++){
+            if(this.games[i].gameId == id){
+                return this.games[i];
+            }
+        }
+
+        return this.games[0];
+    }
 }
