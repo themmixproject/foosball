@@ -21,25 +21,20 @@ export class GameService {
     };
     public baseUrl: string;
 
-    public game(index: number) {
-        let game: Game = this.games[index];
-        return {
-            increaseScore(teamIndex: number, teamMemberIndex: number) {
-                let team = game.teams[teamIndex];
-                team.score++;
-                team.members[teamMemberIndex].score++;
-                team.members[teamMemberIndex].player.score++;
-            },
-            decreaseScore(teamIndex: number, teamMemberIndex: number) {
-                let team = game.teams[teamIndex];
-                let teamMember = team.members[teamMemberIndex];
-                if (team.score > 0 && teamMember.score > 0) {
-                    team.score--;
-                    team.members[teamMemberIndex].score--;
-                    team.members[teamMemberIndex].player.score--;
-                }
-            },
-        };
+    public increaseScore(teamId: number, memberId: number) {
+        this.http
+            .put(this.baseUrl + "api/score/increase/" + teamId + "/" + memberId, null)
+            .subscribe(() => {
+                this.getGames();
+            });
+    }
+    
+    public decreaseScore(teamId: number, memberId: number) {
+        this.http
+            .put(this.baseUrl + "api/score/decrease/" + teamId + "/" + memberId, null)
+            .subscribe(() => {
+                this.getGames();
+            });
     }
 
     public getGames() {
@@ -48,7 +43,6 @@ export class GameService {
             .subscribe((result) => {
                 this.games = result;
                 this.execChange.next(this.games);
-                console.log(result);
             });
     }
 
@@ -64,9 +58,9 @@ export class GameService {
         this.execChange.next(this.games);
     }
 
-    public getGameById(id: number){
-        for(let i =0; i<this.games.length; i++){
-            if(this.games[i].gameId == id){
+    public getGameById(id: number) {
+        for (let i = 0; i < this.games.length; i++) {
+            if (this.games[i].gameId == id) {
                 return this.games[i];
             }
         }
