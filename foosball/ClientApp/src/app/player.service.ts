@@ -29,7 +29,6 @@ export class PlayerService {
         ).subscribe((result) => {
             this.players = result;
             this.playersChange.next(this.players);
-            console.log(result);
         })
     }
 
