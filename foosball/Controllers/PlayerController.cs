@@ -20,6 +20,11 @@ namespace foosball.Controllers {
             return foosballContext.Players.ToList();
         }
 
+        [HttpGet("best")] 
+        public IEnumerable<Player> GetBestPlayers() {
+            return foosballContext.Players.OrderByDescending(player => player.Score).Take(10).ToList();
+        }
+
         //// GET api/<PlayerController>/5
         //[HttpGet("{id}")]
         //public string Get(int id) {
