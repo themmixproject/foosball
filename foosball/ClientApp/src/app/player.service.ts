@@ -9,6 +9,7 @@ import { Subject, firstValueFrom } from "rxjs";
 })
 export class PlayerService {
     playersChange: Subject<any> = new Subject<any>();
+    bestPlayersChange: Subject<any> = new Subject<any>();
 
     constructor(private http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
         this.baseUrl = baseUrl;
@@ -29,6 +30,14 @@ export class PlayerService {
         ).subscribe((result) => {
             this.players = result;
             this.playersChange.next(this.players);
+        })
+    }
+
+    public bestPlayers: Array<Player> = [];
+    public getBestPlayers() {
+        this.http.get<Player[]>(this.baseUrl + "api/player/best/").subscribe((result) => {
+            this.bestPlayers = result;
+            this.bestPlayersChange.next(this.bestPlayers);
         })
     }
 
