@@ -39,13 +39,10 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
         HttpClientModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: "", component: HomeComponent, pathMatch: "full" },
-            { path: "player-manager", component: PlayerManagerComponent },
-            { path: "game-manager", component: GameManagerComponent },
-            { path: "counter", component: CounterComponent },
-            { path: "fetch-data", component: FetchDataComponent },
+            { path: "", component: LeaderboardComponent, pathMatch: "full" },
+            { path: "players", component: PlayerManagerComponent },
+            { path: "games", component: GameManagerComponent },
             {path: "game/:id", component: GameComponent},
-            {path: "leaderboard", component: LeaderboardComponent}
         ]),
     ],
     providers: [],
