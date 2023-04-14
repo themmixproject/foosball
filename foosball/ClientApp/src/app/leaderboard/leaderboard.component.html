@@ -1,1 +1,7 @@
-<p>leaderboard works!</p>
+<h1>Leaderboard</h1>
+<div id="leaderboard-list-container">
+    <div class="leaderboard-list-item" *ngFor="let player of players; index as playerIndex">
+        <div>{{playerIndex+1}}. {{player.name}}</div>
+        <div>Score: {{player.score}}</div>
+    </div>
+</div>

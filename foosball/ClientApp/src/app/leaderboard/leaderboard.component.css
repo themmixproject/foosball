@@ -1,0 +1,12 @@
+.leaderboard-list-item {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: white;
+    text-align: center;
+    background-color: rgb(125, 207, 255);
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
