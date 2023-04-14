@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Team } from "src/team";
 import { GameService } from "../game.service";
 import { Player } from "src/player";
@@ -10,7 +10,7 @@ import { TeamMember } from "src/team-member";
     templateUrl: "./game-creator.component.html",
     styleUrls: ["./game-creator.component.css"],
 })
-export class GameCreatorComponent {
+export class GameCreatorComponent implements OnInit {
     constructor(
         private gameService: GameService,
         private playerService: PlayerService
@@ -31,6 +31,10 @@ export class GameCreatorComponent {
         );
         this.players = this.playerService.players;
         this.playerSelectorTeam = this.teams[0];
+    }
+
+    ngOnInit(): void {
+        this.players = this.playerService.players;
     }
 
     teams: Array<Team> = [];

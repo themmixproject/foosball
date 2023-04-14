@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { GameService } from "../game.service";
 import { Game } from "src/game";
 import { Observable } from "rxjs";
@@ -8,17 +8,20 @@ import { Observable } from "rxjs";
     templateUrl: "./game-list.component.html",
     styleUrls: ["./game-list.component.css"],
 })
-export class GameListComponent {
+export class GameListComponent implements OnInit {
     
     constructor(private gameService: GameService) {
         this._subscription_games = this.gameService.execChange.subscribe((games) => {
             this.games = games;
         })
-        this.games = gameService.games;
+    }
+
+    ngOnInit(): void {
+        this.games = this.gameService.games;
     }
     
     
-    games: Array<Game>;
+    games: Array<Game> = [];
     _subscription_games :any;
 }
     
