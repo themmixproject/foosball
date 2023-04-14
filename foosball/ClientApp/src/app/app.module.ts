@@ -16,6 +16,7 @@ import { GameManagerComponent } from './game-manager/game-manager.component';
 import { GameCreatorComponent } from './game-creator/game-creator.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameComponent } from './game/game.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { GameComponent } from './game/game.component';
         GameCreatorComponent,
         GameListComponent,
         GameComponent,
+        LeaderboardComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -42,7 +44,8 @@ import { GameComponent } from './game/game.component';
             { path: "game-manager", component: GameManagerComponent },
             { path: "counter", component: CounterComponent },
             { path: "fetch-data", component: FetchDataComponent },
-            {path: "game/:id", component: GameComponent}
+            {path: "game/:id", component: GameComponent},
+            {path: "leaderboard", component: LeaderboardComponent}
         ]),
     ],
     providers: [],
