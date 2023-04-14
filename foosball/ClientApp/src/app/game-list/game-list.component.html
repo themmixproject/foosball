@@ -1,4 +1,4 @@
-<h1 [hidden]="games.length > 1">Games</h1>
+<h1 [hidden]="!(games.length>1)">Games</h1>
 <div id="game-list">
     <a *ngFor="let game of games" [routerLink]="['/game', game.gameId]">
         <div class="game-list-item">
