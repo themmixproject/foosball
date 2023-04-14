@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { AlertService } from "../alert.service";
 import { PlayerService } from "../player.service";
 import { Player } from "src/player";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Inject } from "@angular/core";
 
 @Component({
@@ -13,7 +12,6 @@ import { Inject } from "@angular/core";
 export class PlayerManagerComponent implements OnInit {
     constructor(
         private alertService: AlertService,
-        private http: HttpClient,
         public playerService: PlayerService,
         @Inject("BASE_URL") baseUrl: string
     ) {
@@ -27,9 +25,6 @@ export class PlayerManagerComponent implements OnInit {
         this.players = this.playerService.players;
     }
 
-    private _options = {
-        headers: new HttpHeaders({ "Content-Type": "application/json" }),
-    };
     public createNewPlayer() {
         if (this.playerName === "") {
             this.alertService.toggleAlert("Player name cannot be empty.");
