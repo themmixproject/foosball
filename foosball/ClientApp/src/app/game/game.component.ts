@@ -11,14 +11,12 @@ import { ActivatedRoute } from "@angular/router";
 export class GameComponent {
     constructor(public gameService: GameService, private route: ActivatedRoute) {
         this.gameId = 0;
-        let idParam = this.route.snapshot.queryParamMap.get("id");
-        if(idParam!=null){
-            this.gameId = 1
+        let idParam = this.route.snapshot.paramMap.get("id");
+        if(idParam==null){
+            this.gameId = 1;
         }
         else {
-            if(idParam!=null){
-                this.gameId = idParam;
-            }
+            this.gameId = parseInt(idParam);
         }
         this.game = new Game([]);
         this._subscription_games = this.gameService.execChange.subscribe((games) => {
